@@ -26,7 +26,7 @@ class ReportSeeder extends Seeder
         }
 
         // Genera 50 report con un progetto casuale
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             Report::create([
                 'title' => fake()->sentence(4),
                 'description' => fake()->paragraph(2),

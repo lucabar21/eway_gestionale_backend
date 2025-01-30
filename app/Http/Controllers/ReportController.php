@@ -27,7 +27,7 @@ class ReportController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'project_id' => 'required|exists:project,id',
+            'project_id' => 'required|exists:projects,id',
         ]);
 
         $report = Report::create($validated);
@@ -40,7 +40,7 @@ class ReportController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'project_id' => 'required|exists:project,id',
+            'project_id' => 'required|exists:projects,id',
         ]);
 
         $report->update($validated);

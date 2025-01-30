@@ -19,7 +19,7 @@ class ProjectController extends Controller
     // Visualizza un singolo progetto
     public function show(Project $project)
     {
-        return response()->json($project->load('employee'), 200);
+        return response()->json($project->load('employees'), 200);
     }
 
     // Crea un nuovo progetto
@@ -27,7 +27,7 @@ class ProjectController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'descrption' => 'required|string',
+            'description' => 'required|string',
             'employees' => 'required|array|min:1',
             'employees.*' => 'exists:employees,id',
         ]);
@@ -43,7 +43,7 @@ class ProjectController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'descrption' => 'required|string',
+            'description' => 'required|string',
             'employees' => 'required|array|min:1',
             'employees.*' => 'exists:employees,id',
         ]);
